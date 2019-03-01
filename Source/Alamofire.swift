@@ -41,11 +41,11 @@ public enum AF {
     ///
     /// - Returns: The created `DataRequest`.
     public static func request(_ url: URLConvertible,
-                               method: HTTPMethod = .get,
-                               parameters: Parameters? = nil,
-                               encoding: ParameterEncoding = URLEncoding.default,
-                               headers: HTTPHeaders? = nil,
-                               interceptor: RequestInterceptor? = nil) -> DataRequest {
+                               method: HTTPMethod,
+                               parameters: Parameters?,
+                               encoding: ParameterEncoding,
+                               headers: HTTPHeaders?,
+                               interceptor: RequestInterceptor?) -> DataRequest {
         return Session.default.request(url,
                                        method: method,
                                        parameters: parameters,
@@ -67,11 +67,11 @@ public enum AF {
     ///
     /// - Returns: The created `DataRequest`.
     public static func request<Parameters: Encodable>(_ url: URLConvertible,
-                                                      method: HTTPMethod = .get,
-                                                      parameters: Parameters? = nil,
-                                                      encoder: ParameterEncoder = URLEncodedFormParameterEncoder.default,
-                                                      headers: HTTPHeaders? = nil,
-                                                      interceptor: RequestInterceptor? = nil) -> DataRequest {
+                                                      method: HTTPMethod,
+                                                      parameters: Parameters?,
+                                                      encoder: ParameterEncoder,
+                                                      headers: HTTPHeaders?,
+                                                      interceptor: RequestInterceptor?) -> DataRequest {
         return Session.default.request(url,
                                        method: method,
                                        parameters: parameters,
